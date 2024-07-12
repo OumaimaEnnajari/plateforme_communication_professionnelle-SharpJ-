@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sharpj</title>
+    <link rel="icon" href="images/logoS.png" type="image/png ">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/login.css'>
+</head>
+<body>
+
+    <header id="nav">
+       <div class="nav--list">
+            <a href="login.html"/>
+                <h3 id="logo">
+                    <img src="./images/logoEnsat.png" alt="Site Logo" width="170" >
+                    <span></span>
+                </h3>
+            </a>
+       </div>
+
+        <div id="nav__links">
+          
+            <button class="nav__link" id="create__room__btn" onclick="window.location.href='CreateRoom.html';" style="cursor: pointer;">
+                Create Room
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ede0e0" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
+            </button>
+            
+        </div>
+
+        
+    </header>
+
+    <main id="room__lobby__container">
+        
+        <div id="form__container">
+             <div id="form__container__header">
+                 <p>👋 Join Room</p>
+             </div>
+ 
+ 
+            <form id="login-form">
+ 
+                 <div class="form__field__wrapper">
+                    <div style="margin-top: 20px; margin-left: 20px; margin-bottom: 20px;">
+                        <label style="font-weight: 400px; font-size: 15px;" >Your Name</label>
+                    </div>
+                        <input type="text" name="name" required placeholder="Enter your display name..." />
+                 </div>
+                 <div id="errorName"></div>
+ 
+                 <div class="form__field__wrapper">
+                    <div style="margin-top: 20px; margin-left: 20px; margin-bottom: 20px;">
+                        <label style="font-weight: 400px; font-size: 15px;">Room ID</label>
+                     </div>
+                        <input id="roomId" type="text" name="room"  placeholder="Enter room id..." required/>
+                 </div>
+ 
+                 <div class="form__field__wrapper">
+                    <button type="submit" class="room" style="margin-left: 27%!important; margin-bottom: 30px!important;">Go to Room 
+                         
+                    </button>
+                 </div>
+
+                 <div id="error"></div>
+            </form>
+        </div>
+     </main>
+    
+</body>
+<script type="text/javascript" src="js/login.js"></script>
+
+</html>

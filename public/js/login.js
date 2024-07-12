@@ -1,8 +1,5 @@
-
-
 let form = document.getElementById('login-form')
-const displayName = localStorage.getItem('display_Name') || "";
-
+displayName= localStorage.getItem('display_Name')  //deletd when i refresh page
 console.log("name= ", displayName)
 if(displayName) {
     form.name.value= displayName
@@ -47,3 +44,4 @@ form.addEventListener('submit', (e) => {
     let element= '<div>Error<div>'
     error.insertAdjacentHTML('beforeend', element)
 })
+

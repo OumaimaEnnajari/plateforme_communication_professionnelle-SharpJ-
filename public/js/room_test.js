@@ -1,8 +1,6 @@
 // choose a roomId n'est pas occupe
 // lorsque aucun particpant ne reste dans room, il faut supprimer roomId+ leurs participants
 
-
-
 const APP_ID = "df3eb88999f9456f9ed05dbc7dd81f05"
 let listeUsers = JSON.parse(localStorage.getItem('listeUsers')) || {};
 
@@ -12,14 +10,14 @@ let roomId = urlParams.get('room')
 var stompClient = null;
 
 if(!roomId){
-  window.location='/login'
+  window.location='login.html'
   throw new Error('Redirection to login page');
 
 }
 
 let name= sessionStorage.getItem('displayName')
 if(name === null) {
-    window.location = `login?room=${roomId}&error=name`;
+    window.location = `login.html?room=${roomId}&error=name`;
     throw new Error('Redirection to login page');
 }
 
@@ -27,14 +25,12 @@ let uId = sessionStorage.getItem('uId')    //reste valable durant que la session
 
 if(!uId) 
 {
-    
         uId = String(Math.floor(Math.random() * 10000))
         sessionStorage.setItem('uId', uId)
     
-
 }
 
-console.log('uid= ', uId)
+
 // Retrieve listeUsersName from localStorage
 let listeUsersName = JSON.parse(localStorage.getItem('listeUsersName')) || [] ;
 // Check if listeUsersName exists in localStorage
@@ -102,7 +98,7 @@ function copyLink() {
     document.body.removeChild(tempElement);
 
     // Afficher un message pour indiquer que le texte a été copié
-    alert("Le texte a été copié !");
+    alert("Le lien a été copié !");
 }
 
 let joinRoomInit = async () => {
@@ -443,7 +439,7 @@ let sendMessage= async(e) => {
 }
 
 let leaveStream = async (e) => {
-    window.location='/CreateRoom'
+    window.location='CreateRoom.html'
     throw new Error('Redirection to create page');
 }
 

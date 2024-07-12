@@ -1,4 +1,3 @@
-
 let displayFrame= document.getElementById('stream__box')
 let videoFrames= document.getElementsByClassName('video__container')
 let userIdInDisplayFrame= null;
@@ -31,7 +30,6 @@ let expandVideoFrame= (e) => {
 }
 
 for (let i=0; videoFrames.length >i ; i++) {
-    console.log("passed 1")
     videoFrames[i].addEventListener('click', expandVideoFrame)
 }
 
@@ -55,7 +53,6 @@ let toggleCamera = async (e) => {
 
     if(localTracks[1].muted){
         await localTracks[1].setMuted(false)
-        console.log("passed 2")
         button.classList.add('active')
   
     }else{
@@ -72,7 +69,6 @@ let toggleMic = async (e) => {
 
     if(localTracks[0].muted){
         await localTracks[0].setMuted(false)
-        console.log("passed 3")
         button.classList.add('active')
     }else{
         await localTracks[0].setMuted(true)

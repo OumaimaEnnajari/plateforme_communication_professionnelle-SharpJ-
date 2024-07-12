@@ -1,13 +1,12 @@
-
 let forme = document.getElementById('create-form');
-const displayName = localStorage.getItem('display_Name') || "";
+displayName= localStorage.getItem('display_Name')  //deletd when i refresh page
 
 console.log("name= ", displayName)
 if(displayName) {
     forme.name.value= displayName
 }
 
-let uIdAnnimateur = localStorage.getItem('uIdAnnimateur') || ""   //reste valable durant que la session (onglet) de user est ouverte 
+let uIdAnnimateur = localStorage.getItem('uIdAnnimateur')    //reste valable durant que la session (onglet) de user est ouverte 
 if(!uIdAnnimateur) 
 {
     uIdAnnimateur = String(Math.floor(Math.random() * 10000))
@@ -41,4 +40,3 @@ forme.addEventListener('submit', (e) => {
     localStorage.setItem('roomIDsArray', JSON.stringify(roomIDsArray));
     window.location = `/room.html?room=${roomID}`;
 });
-
